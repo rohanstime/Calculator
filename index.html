@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" media="screen and (max-width: 700px)" href="mobile.css">
+  
+  
+</head>
+
+<body>
+  
+  <div class="calculator_body">
+    <table>
+      <tr>
+        <td><input type="text" id="show_result"></td>
+      </tr>
+      
+      <tr>
+        <td>
+          <button value="C" onclick="deleteAll()" id="clear_button">C</button>
+          <button type="text" value="(" onclick="calculator('(')">(</button>
+          <button type="text" value=")" onclick="calculator(')')">)</button>
+        </td>
+        
+      </tr>
+      
+      <tr>
+        <td>
+          <button type="text" value="7" onclick="calculator('7')">7</button>
+          <button type="text" value="8" onclick="calculator('8')">8</button>
+          <button type="text" value="9" onclick="calculator('9')">9</button>
+          <button type="text" value="+" onclick="calculator('+')" id="plus_button">+</button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <button type="text" value="4" onclick="calculator('4')">4</button>
+          <button type="text" value="5" onclick="calculator('5')">5</button>
+          <button type="text" value="6" onclick="calculator('6')">6</button>
+          <button type="text" value="-" onclick="calculator('-')" id="minus_button">-</button>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <button type="text" value="1" onclick="calculator('1')">1</button>
+          <button type="text" value="2" onclick="calculator('2')">2</button>
+          <button type="text" value="3" onclick="calculator('3')">3</button>
+          <button type="text" value="-" onclick="calculator('*')" id="multiply_button">*</button>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td>
+          <button type="text" value="0" onclick="calculator('0')">0</button>
+          <button type="text" value="." onclick="calculator('.')">.</button>
+          <button type="text" value="/" onclick="calculator('/')">/</button>
+          <button type="text" value="=" onclick="answer()" id="equal_button">=</button>
+        </td>
+      </tr>
+      
+      
+      
+      
+      
+      
+    </table>
+    
+    
+    
+  </div>
+  
+  
+  <script>
+        
+    function deleteAll() {
+      document.getElementById("show_result").value = "";
+    }
+    
+    function calculator(NewValue) {
+      document.getElementById("show_result").value += NewValue; 
+    }
+    
+    function answer() {
+      var a = document.getElementById("show_result").value;
+     
+      var b = eval(a);
+      
+      document.getElementById("show_result").value = b
+    }
+    
+    
+    
+  </script>
+  
+  
+  
+  
+<script src="main.js"></script>
+</body>
+</html>
